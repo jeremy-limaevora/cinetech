@@ -4,30 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinetech</title>
+    <link rel="stylesheet" href="film.css">
 </head>
 <body>
-<h1></h1>
+ 
+ <ul id="listeFilms"></ul>
+
+ <script src="film.js"></script>
 </body>
-<script>
-const maConst = '8c4b867188ee47a1d4e40854b27391ec';
-const apiUrl = `https://api.themoviedb.org/3/discover/tv?api_key=${maConst}&language=fr-FR`;
-
-fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Erreur de réseau !');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data); // Affiche les données de la réponse dans la console
-    // Utilisez les données comme vous le souhaitez ici
-  })
-  .catch(error => {
-    console.error('Il y a eu un problème avec votre requête Fetch:', error);
-  });
-
-
-
-</script>
 </html>
