@@ -1,4 +1,4 @@
-#listeFilms {
+#listeSeries {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -6,7 +6,7 @@
     list-style-type: none;
 }
 
-.film {
+.Series{
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;

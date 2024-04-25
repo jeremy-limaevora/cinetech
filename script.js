@@ -13,24 +13,23 @@ fetch(apiUrl)
     // Utilisez les données comme vous le souhaitez ici
     const listeSeries = document.getElementById('listeSeries');
 
-    // Afficher les titres de chaque série
+    // Afficher les titres et les images de chaque série
     data.results.forEach(serie => {
         const serieLi = document.createElement('li');
         serieLi.classList.add('serie');
 
-        // Créer un élément img
+        // Créer un élément img pour l'image de la série
         const img = document.createElement('img');
-        // Utiliser une URL d'image par défaut ou une propriété de l'objet serie
         img.src = serie.poster_path ? `https://image.tmdb.org/t/p/w500${serie.poster_path}` : 'chemin/vers/image/par/defaut.jpg';
-        img.alt = serie.original_title;
+        img.alt = serie.original_name;
 
-        // Créer un élément span pour le titre
-        const span = document.createElement('span');
-        span.textContent = serie.original_title;
+        // Créer un élément span pour le titre et y insérer le titre de la série
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = serie.original_name; // Utilise original_name pour le titre de la série
 
         // Ajouter l'image et le titre à l'élément li
         serieLi.appendChild(img);
-        serieLi.appendChild(span);
+        serieLi.appendChild(titleSpan);
 
         // Ajouter l'élément li à la liste des séries
         listeSeries.appendChild(serieLi);
