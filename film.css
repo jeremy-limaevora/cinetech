@@ -1,3 +1,7 @@
+
+/*film.css*/
+
+/* Style pour la liste des films, utilise flexbox pour un affichage flexible et responsive */
 #listeFilms {
     display: flex;
     flex-wrap: wrap;
@@ -6,14 +10,95 @@
     list-style-type: none;
 }
 
+/* Style pour chaque film, avec une bordure, des marges et des espacements internes */
 .film {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    width: calc(25% - 20px); /* Adjust the width as needed */
+    width: calc(25% - 20px); /* Ajuste la largeur en fonction du conteneur */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Century Gothic", sans-serif;
+}
+
+/* Style pour les images des films, avec une transition pour un effet agrandissement */
+.film img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px; /* Ajoute un espace en bas de l'image */
+    transition: transform 0.3s ease; /* Ajoute une transition fluide sur la transformation */
+}
+
+/* Effet de zoom sur l'image lors du survol */
+.film:hover img {
+    transform: scale(1.1); /* Agrandit l'image de 10% lorsqu'elle est survolée */
+}
+
+/* Style global pour le corps du document, définit les couleurs de fond et de texte */
+body {
+    background-color: #000; /* Définit le fond en noir */
+    color: #761276;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold; /* Définit le poids de la police en gras */
+}
+
+/* Style pour les titres des films, avec une couleur et une taille de texte spécifiques */
+.film span {
+    color: #761276; /* Définit la couleur du texte en violet pour les titres des films */
+    font-weight: bold; /* Met le style de police en gras */
+    font-size: 25px; /* Agrandit le texte des titres */
+}
+
+/* Style pour la fenêtre modale, avec un fond semi-transparent et un contenu centré */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style pour le contenu de la fenêtre modale, centré et avec des marges */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    padding: 20px;
+}
+
+/* Style pour le bouton de fermeture de la fenêtre modale, avec un effet de survol */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles pour les écrans de petite taille (par exemple, mobiles) */
+@media (max-width: 768px) {
+    .film {
+        width: calc(50% - 20px); /* Réduit la largeur des éléments de la liste */
+    }
+}
+
+/* Styles pour les écrans encore plus petits (par exemple, petits mobiles) */
+@media (max-width: 480px) {
+    .film {
+        width: 100%; /* Les éléments de la liste prennent toute la largeur */
+    }
 }
