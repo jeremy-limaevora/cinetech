@@ -88,3 +88,155 @@ button:active {
   border: 1px solid #ccc;
 }
 
+
+
+#listeFilms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
+}
+
+.film {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(25% - 20px); /* Adjust the width as needed */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Century Gothic", sans-serif;
+  color: #761276;
+  font-weight: bold;
+  font-size: 25px
+}
+.film img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+ }
+
+
+ a {
+  color: inherit; /* Hérite la couleur du texte du parent */
+  text-decoration: none; /* Supprime le sous-lignage */
+}
+
+#listeSeries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    list-style-type: none;
+}
+
+.Series{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(25% - 20px); /* Adjust the width as needed */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Century Gothic", sans-serif;
+    color: #761276;
+    font-weight: bold;
+    font-size: 25px
+}
+#listeSeries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  list-style-type: none;
+ }
+ 
+ .Series {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(25% - 20px); /* Adjustez la largeur selon vos besoins */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ 
+ .Series img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+ }
+
+
+ #inscriptionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#inscriptionForm label {
+  font-weight: bold;
+}
+
+#inscriptionForm input[type="text"],
+#inscriptionForm input[type="email"],
+#inscriptionForm input[type="password"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#inscriptionForm button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#inscriptionForm button:hover {
+  background-color: #0056b3;
+}
+
+#connexionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#connexionForm label {
+  font-weight: bold;
+}
+
+#connexionForm input[type="email"],
+#connexionForm input[type="password"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#connexionForm button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#connexionForm button:hover {
+  background-color: #0056b3;
+}
+
+
+
