@@ -1,4 +1,167 @@
-#listeSeries {
+
+/*film.css*/
+
+header{
+    background-color: rgb(27, 27, 27);
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+button {
+    width: fit-content;
+    min-width: 100px;
+    height: 45px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2.5px solid #E0E1E4;
+    box-shadow: 0px 0px 20px -20px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s ease-in-out 0ms;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  button:hover {
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 20px -18px;
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    float: right;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #searchInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #inscriptionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #inscriptionForm label {
+    font-weight: bold;
+  }
+  
+  #inscriptionForm input[type="text"],
+  #inscriptionForm input[type="email"],
+  #inscriptionForm input[type="password"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #inscriptionForm button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #inscriptionForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  #connexionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #connexionForm label {
+    font-weight: bold;
+  }
+  
+  #connexionForm input[type="email"],
+  #connexionForm input[type="password"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #connexionForm button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #connexionForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-results li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .search-results li:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+/* Style pour la liste des films, utilise flexbox pour un affichage flexible et responsive */
+#listeFilms {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -6,127 +169,127 @@
     list-style-type: none;
 }
 
-.Series{
+/* Style pour chaque film, avec une bordure, des marges et des espacements internes */
+.film {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    width: calc(25% - 20px); /* Adjust the width as needed */
+    width: calc(25% - 20px); /* Ajuste la largeur en fonction du conteneur */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Century Gothic", sans-serif;
 }
 
-
-
-/* Media Query pour les écrans de petite taille (mobile) */
-@media (max-width: 600px) {
-    .Series {
-        width: calc(50% - 20px); /* Réduit la largeur pour un affichage en deux colonnes */
-    }
+/* Style pour les images des films, avec une transition pour un effet agrandissement */
+.film img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px; /* Ajoute un espace en bas de l'image */
+    transition: transform 0.3s ease; /* Ajoute une transition fluide sur la transformation */
 }
 
-/* Media Query pour les écrans de taille moyenne (tablettes) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .Series {
-        width: calc(33.33% - 20px); /* Réduit la largeur pour un affichage en trois colonnes */
-    }
+/* Effet de zoom sur l'image lors du survol */
+.film:hover img {
+    transform: scale(1.1); /* Agrandit l'image de 10% lorsqu'elle est survolée */
 }
 
-/* Media Query pour les écrans de grande taille (ordinateurs de bureau) */
-@media (min-width: 1025px) {
-    .Series {
-        width: calc(25% - 20px); /* Conserve la largeur initiale pour un affichage en quatre colonnes */
-    }
+/* Style global pour le corps du document, définit les couleurs de fond et de texte */
+body {
+    background-color: #000; /* Définit le fond en noir */
+    color: #761276;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold; /* Définit le poids de la police en gras */
+    
 }
 
-h2{
-    color: red;
+/* Style pour les titres des films, avec une couleur et une taille de texte spécifiques */
+.film span {
+    color: #761276; /* Définit la couleur du texte en violet pour les titres des films */
+    font-weight: bold; /* Met le style de police en gras */
+    font-size: 25px; /* Agrandit le texte des titres */
 }
 
-    header{
-        background-color: rgb(27, 27, 27);
-        margin-top: -2%;
-        padding-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+/* Style pour la fenêtre modale, avec un fond semi-transparent et un contenu centré */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0; /* Initiallement invisible */
+    transition: opacity 0.3s ease; /* Ajoute une transition fluide sur l'opacité */
 }
 
-body, header {
-  margin: 0;
-  padding: 0;
-}
-button {
-  width: fit-content;
-  min-width: 100px;
-  height: 45px;
-  padding: 8px;
-  border-radius: 5px;
-  border: 2.5px solid #E0E1E4;
-  box-shadow: 0px 0px 20px -20px;
-  cursor: pointer;
-  background-color: white;
-  transition: all 0.2s ease-in-out 0ms;
-  user-select: none;
-  font-family: 'Poppins', sans-serif;
+/* Style pour le contenu de la fenêtre modale, centré et avec des marges */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    padding: 20px;
 }
 
-button:hover {
-  background-color: #F2F2F2;
-  box-shadow: 0px 0px 20px -18px;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 0;
-}
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
-}
-
-.popup-content {
-  background-color: white;
-  width: 300px;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
-}
-
+/* Style pour le bouton de fermeture de la fenêtre modale, avec un effet de survol */
 .close {
-  float: right;
-  cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.search-bar {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-#searchInput {
-  width: 80%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+
+/* Styles pour les écrans de petite taille (par exemple, mobiles) */
+@media (max-width: 768px) {
+    .film {
+        width: calc(50% - 20px); /* Réduit la largeur des éléments de la liste */
+    }
 }
+
+/* Styles pour les écrans encore plus petits (par exemple, petits mobiles) */
+@media (max-width: 480px) {
+    .film {
+        width: 100%; /* Les éléments de la liste prennent toute la largeur */
+    }
+}
+/* Animation de fondu vers la gauche */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.modal {
+    animation: fadeInLeft 0.5s ease-out;
+}
+
+
+.expand {
+    font-size: 50px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+
+
+.expand2 {
+    font-size: 20px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+
+
+
