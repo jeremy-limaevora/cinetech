@@ -7,6 +7,29 @@
   <title>Liste des séries</title>
 </head>
 <body>
+  <header>
+    <h2>Cinetech</h2>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un film...">
+
+    </div>
+    <button id="connexionBtn" data-popup="connexionPopup">Connexion</button>
+    <div id="connexionPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" data-close="connexionPopup">&times;</span>
+        </div>
+    </div>
+    
+    <button id="inscriptionBtn" data-popup="inscriptionPopup">Inscription</button>
+    <div id="inscriptionPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" data-close="inscriptionPopup">&times;</span>
+        </div>
+    </div>
+
+
+</header>
   <center><h1>Liste des séries</h1></center>
   <ul id="listeSeries"></ul>
 
