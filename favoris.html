@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="favors.css">
+    <title>Séries favorites</title>
+</head>
+<body>
+    <header>
+        <h2>Cinetech</h2>
+    
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher un film...">
+    
+        </div>
+        <button id="connexionBtn" data-popup="connexionPopup">Connexion</button>
+        <div id="connexionPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" data-close="connexionPopup">&times;</span>
+            </div>
+        </div>
+        
+        <button id="inscriptionBtn" data-popup="inscriptionPopup">Inscription</button>
+        <div id="inscriptionPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" data-close="inscriptionPopup">&times;</span>
+            </div>
+        </div>
+    
+    
+    </header>
+    <h1>Séries favorites</h1>
+    <ul id="favorisList"></ul>
+
+    <script>
+        // Fonction pour récupérer les séries favorites depuis localStorage
+        function getFavoris() {
+            const favoris = localStorage.getItem('favoris');
+            return favoris ? JSON.parse(favoris) : [];
+        }
+
+        // Fonction pour afficher les séries favorites dans la liste
+        function afficherFavoris() {
+            const favoris = getFavoris();
+            const favorisList = document.getElementById('favorisList');
+
+            // Effacer le contenu précédent de la liste
+            favorisList.innerHTML = '';
+
+            // Ajouter chaque série favorite à la liste
+            favoris.forEach(serie => {
+                const listItem = document.createElement('li');
+                listItem.textContent = serie.original_name; // Afficher le titre de la série
+                favorisList.appendChild(listItem);
+            });
+        }
+
+        // Appel de la fonction pour afficher les séries favorites au chargement de la page
+        window.addEventListener('load', afficherFavoris);
+    </script>
+</body>
+</html>
