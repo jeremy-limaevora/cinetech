@@ -51,9 +51,39 @@
             // Ajouter chaque série favorite à la liste
             favoris.forEach(serie => {
                 const listItem = document.createElement('li');
-                listItem.textContent = serie.original_name; // Afficher le titre de la série
+                listItem.classList.add('serie'); // Ajouter une classe pour le style
+
+                // Créer un élément img pour l'image de la série
+                const img = document.createElement('img');
+                img.src = serie.image; // Utiliser l'image stockée dans les favoris
+                img.alt = serie.title;
+
+                // Créer un élément span pour le titre et y insérer le titre de la série
+                const titleSpan = document.createElement('span');
+                titleSpan.textContent = serie.title; // Utiliser le titre stocké dans les favoris
+
+                // Créer un bouton pour retirer la série des favoris
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = 'Retirer des favoris';
+                removeBtn.addEventListener('click', () => retirerDesFavoris(serie.id)); // Appeler la fonction pour retirer la série des favoris
+
+                // Ajouter l'image, le titre et le bouton "Retirer des favoris" à l'élément li
+                listItem.appendChild(img);
+                listItem.appendChild(titleSpan);
+                listItem.appendChild(removeBtn);
+
                 favorisList.appendChild(listItem);
             });
+        }
+
+        // Fonction pour retirer une série des favoris
+        function retirerDesFavoris(serieId) {
+            let favoris = localStorage.getItem('favoris');
+            favoris = favoris ? JSON.parse(favoris) : [];
+            const updatedFavoris = favoris.filter(fav => fav.id !== serieId);
+            localStorage.setItem('favoris', JSON.stringify(updatedFavoris));
+            afficherFavoris(); // Actualiser la liste des séries favorites après la suppression
+            alert('Série retirée des favoris !');
         }
 
         // Appel de la fonction pour afficher les séries favorites au chargement de la page
