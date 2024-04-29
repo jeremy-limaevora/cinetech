@@ -6,24 +6,76 @@
     <title>Cinetech</title>
     <link rel="stylesheet" href="film.css">
 </head>
-<body>
- 
- <!-- Liste des films, chaque film sera ajouté dynamiquement via JavaScript -->
- <ul id="listeFilms"></ul>
- 
- <!-- Fenêtre modale pour afficher les détails d'un film sélectionné -->
- <div id="myModal" class="modal">
- <div class="modal-content">
-    <!-- Bouton de fermeture de la fenêtre modale -->
-    <span class="close">&times;</span>
-    <!-- Image du film sélectionné -->
-    <img id="modalImg" src="" alt="">
-    <!-- Détails du film sélectionné -->
-    <div id="modalDetails"></div>
- </div>
-</div>
 
-<!-- Script pour gérer la logique de l'application, comme l'affichage des films et la gestion de la fenêtre modale -->
-<script src="film.js"></script>
+<body>
+    <header>
+        <h2>Cinetech</h2>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher un film..." list="suggestions">
+            <datalist id="suggestions"></datalist>
+        </div>
+
+        <button id="connexionBtn" data-popup="connexionPopup">Connexion</button>
+        <div id="connexionPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" data-close="connexionPopup">&times;</span>
+                <form id="connexionForm">
+                    <h2>Connexion</h2>
+                    <label for="emailConnexion">Email:</label>
+                    <input type="email" id="emailConnexion" name="email" required>
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Connexion</button>
+                </form>
+            </div>
+        </div>
+        
+        <button id="inscriptionBtn" data-popup="inscriptionPopup">Inscription</button>
+        <div id="inscriptionPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" data-close="inscriptionPopup">&times;</span>
+                <form id="inscriptionForm">
+                    <h2>Inscription</h2>
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <label for="emailInscription">Email:</label>
+                    <input type="email" id="emailInscription" name="email" required>
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" id="password" name="password" required>
+                    <label for="confirmPassword">Confirmer le mot de passe:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <center>
+        <h1 class="expand">Liste des films à l'affiche</h1>
+        <p class="expand2">Retrouvez ici tous les films actuellement diffusés dans les salles de cinéma en France</p>
+    </center>
+
+    <main>
+        <br> <br> <br>
+        <!-- Liste des films, chaque film sera ajouté dynamiquement via JavaScript -->
+        <ul id="listeFilms"></ul>
+        
+        <!-- Fenêtre modale pour afficher les détails d'un film sélectionné -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <!-- Bouton de fermeture de la fenêtre modale -->
+                <span class="close">&times;</span>
+                <!-- Image du film sélectionné -->
+                <img id="modalImg" src="" alt="">
+                <!-- Détails du film sélectionné -->
+                <div id="modalDetails"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script pour gérer la logique de l'application, comme l'affichage des films et la gestion de la fenêtre modale -->
+    <script src="film.js"></script>
+
 </body>
 </html>
